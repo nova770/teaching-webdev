@@ -13,7 +13,7 @@
 				// using strInput.split('quick').join('sly') is commonly suggested for doing string replacement
 				// this will not work this exercise though, as the matching is required to be case insensitive
 
-				strInput.replace(/quick/i, "sly", /lazy/i, "sharp");
+				strInput.replace(/quick/, "sly").replace(/lazy/g, "sharp");
 				return strInput;
 			};
 
