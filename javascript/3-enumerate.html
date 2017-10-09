@@ -12,9 +12,10 @@
 				var newStr = [];
 				for(i=0; i < dblInput.length; ++i){
 
-				    if(i === 0){
-                        dblInput[i] = dblInput[i].toFixed(3);
-						newStr[i] = newStr[i].push(dblInput[i]);
+				    if(i != 0){
+				        newStr.push(", "+dblInput[i].toFixed(3));
+                        /*dblInput[i] = dblInput[i].toFixed(3);
+						newStr[i] = newStr[i].push(dblInput[i]);*/
 					}
 
 					/*if(dblInput[i] === dblInput.length){
@@ -30,8 +31,12 @@
                     else{
                         //var test = dblInput[i].toFixed(3);
                         //dblInput[i] = test;
-                        newStr[i] = newStr[i].push(", ", dblInput[i]);
+                        //newStr[i] = newStr[i].push(", ", dblInput[i]);
+						newStr.push(dblInput[i].toFixed(3));
 					}
+
+					var array2 = newStr.join("");
+                    return array2;
 				}
 
 				//dblInput = dblInput.toString();
