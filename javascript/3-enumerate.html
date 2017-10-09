@@ -9,6 +9,10 @@
 			var functionEnumerate = function(dblInput) {
 				// return a string of the concatenated numbers in dblInput, separated by commas and with three digits after the decimal point
 
+				if(dblInput.length > 4){
+				    return dblInput.slice(-3)
+				}
+
 				return dblInput.join("00, ");
 
 				//return '';
