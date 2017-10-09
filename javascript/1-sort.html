@@ -13,16 +13,7 @@
 				// while the input it is being passed by value, it points to the same memory block
 				// returning the input is thus not really necessary / is redundant
 
-				var largest = 0;
-				var l_index = 0;
-
-				if(i=0; i<intInput.length; i++){
-
-				    if(intInput[i] > largest){
-				        largest = intInput[i];
-				        l_index = i;
-					}
-				}
+				intInput.sort();
 
 				return intInput;
 			};
