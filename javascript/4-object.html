@@ -10,10 +10,13 @@
 
 			var functionInsert = function(strKey, strValue) {
 				// insert the property with strKey and strValue into objectHandle
+				objectHandle.strKey;
+				objectHandle.strValue;
 			};
 
 			var functionDelete = function(strKey) {
 				// remove the property with strKey from objectHandle
+				delete objectHandle.strKey;
 			};
 
 			var functionLookup = function(strKey) {
@@ -22,13 +25,21 @@
 				// objectHandle might not contain strKey
 				// should this be the case, return an empty string
 
-				return '';
+				if(objectHandle.strKey == '')
+					return '';
+
+				else if(objectHandle.strKey == strValue){
+				    return strValue;
+				}
 			};
 
 			var functionKeys = function() {
 				// return a string of the concatenated strKey in objectHandle, separated by commas
 
-				return '';
+				if(objectHandle.strKey == '')
+					return '';
+
+                return objectHandle.strKey.join(", ");
 			};
 
 			functionInsert('hello', 'world');
