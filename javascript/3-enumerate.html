@@ -14,12 +14,13 @@
 
 				    if(dblInput[i] == 0){
                         dblInput[i] = dblInput[i].toFixed(3);
-						newStr = dblInput[i].concat("\"");
+						newStr = dblInput[i].concat("\"", newStr);
 					}
 
 					if(dblInput[i] == dblInput.length){
                         dblInput[i] = dblInput[i].toFixed(3);
-				        newStr = dblInput[i].concat("\"");
+				        newStr = dblInput[i].concat(newStr, "\"");
+				        return newStr;
 					}
 
                     if(dblInput[i].length == 3){
@@ -28,7 +29,7 @@
 
                     else{
                         dblInput[i] = dblInput[i].toFixed(3);
-                        newStr = dblInput[i].concat(", ");
+                        newStr = dblInput[i].concat(", ", newStr);
 					}
 				}
 
