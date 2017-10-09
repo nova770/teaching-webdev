@@ -9,27 +9,28 @@
 			var functionEnumerate = function(dblInput) {
 				// return a string of the concatenated numbers in dblInput, separated by commas and with three digits after the decimal point
 
-				var newStr = " ";
+				var newStr = [];
 				for(i=0; i < dblInput.length; ++i){
 
-				    if(dblInput[i] == 0){
+				    if(i === 0){
                         dblInput[i] = dblInput[i].toFixed(3);
-						newStr = newStr.concat("\"", dblInput[i]);
+						newStr[i] = newStr[i].push(dblInput[i]);
 					}
 
-					if(dblInput[i] == dblInput.length){
+					/*if(dblInput[i] === dblInput.length){
                         dblInput[i] = dblInput[i].toFixed(3);
-				        newStr = newStr.concat(dblInput[i], "\"");
+				        newStr[i] = newStr[i].push(dblInput[i]);
 				        return newStr;
-					}
+					}*/
 
-                    if(dblInput[i].length == 3){
+                    if(dblInput[i].length === 3){
                         newStr = dblInput[i].join("00");
                     }
 
                     else{
-                        dblInput[i] = dblInput[i].toFixed(3);
-                        newStr = newStr.concat(", ", dblInput[i]);
+                        var test = dblInput[i].toFixed(3);
+                        dblInput[i] = test;
+                        newStr[i] = newStr[i].push(", ", dblInput[i]);
 					}
 				}
 
