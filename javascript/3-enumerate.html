@@ -14,35 +14,15 @@
 
 				    if(i != 0){
 				        newStr.push(", "+dblInput[i].toFixed(3));
-                        /*dblInput[i] = dblInput[i].toFixed(3);
-						newStr[i] = newStr[i].push(dblInput[i]);*/
 					}
-
-					/*if(dblInput[i] === dblInput.length){
-                        dblInput[i] = dblInput[i].toFixed(3);
-				        newStr[i] = newStr[i].push(dblInput[i]);
-				        return newStr;
-					}*/
-
-                    /*if(dblInput[i].length === 3){
-                        newStr = dblInput[i].join("00");
-                    }*/
 
                     else{
-                        //var test = dblInput[i].toFixed(3);
-                        //dblInput[i] = test;
-                        //newStr[i] = newStr[i].push(", ", dblInput[i]);
 						newStr.push(dblInput[i].toFixed(3));
 					}
-
-					var array2 = newStr.join("");
-                    return array2;
 				}
 
-				//dblInput = dblInput.toString();
-				//return newStr;
-
-				//return '';
+                var array2 = newStr.join("");
+                return array2;
 			};
 
 			console.log(functionEnumerate([5.1, 7.4, 3.3, 6.8, 3.0])); // expected: '5.100, 7.400, 3.300, 6.800, 3.000'
