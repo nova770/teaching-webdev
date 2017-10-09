@@ -13,13 +13,15 @@
 				// while the input it is being passed by value, it points to the same memory block
 				// returning the input is thus not really necessary / is redundant
 
-				Input.sort();
-
 				return intInput;
 			};
 
 			console.log(functionSort([5, 4, 3, 2, 1])); // expected: [1, 2, 3, 4, 5]
 			console.log(functionSort([51, 64, 70, 45, 22])); // expected: [22, 45, 51, 64, 70]
+
+			functionSort.sort(function (a,b) {
+				return a-b;
+            })
 		</script>
 	</head>
 	<body>
