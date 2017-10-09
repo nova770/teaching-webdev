@@ -14,22 +14,22 @@
 
 				    if(dblInput[i] == 0){
                         dblInput[i] = dblInput[i].toFixed(3);
-						newStr = dblInput[i].concat("\"", dblInput[i]);
+						newStr = newStr[i].concat("\"", dblInput[i]);
 					}
 
 					if(dblInput[i] == dblInput.length){
                         dblInput[i] = dblInput[i].toFixed(3);
-				        newStr = dblInput[i].concat(dblInput[i], "\"");
+				        newStr = newStr.concat(dblInput[i], "\"");
 				        return newStr;
 					}
 
                     if(dblInput[i].length == 3){
-                        newStr = dblInput[i].join("00");
+                        newStr = newStr[i].join("00");
                     }
 
                     else{
                         dblInput[i] = dblInput[i].toFixed(3);
-                        newStr = dblInput[i].concat(", ", dblInput[i]);
+                        newStr = newStr[i].concat(", ", dblInput[i]);
 					}
 				}
 
