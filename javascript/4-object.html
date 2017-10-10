@@ -28,18 +28,31 @@
 				if(objectHandle.strKey == '')
 					return '';
 
-				else if(objectHandle.strKey == strValue){
-				    return strValue;
+				else if(objectHandle.hasOwnProperty(strKey)){
+				    return objectHandle[strValue];
 				}
 			};
 
 			var functionKeys = function() {
 				// return a string of the concatenated strKey in objectHandle, separated by commas
+				var str = '';
+				var newArray = Object.keys(objectHandle);
 
-				if(objectHandle.strKey == '')
-					return '';
+				if(newArray != undefined){
 
-                return objectHandle.strKey.join(", ");
+				    for(i=0; i<newArray.length; ++i){
+
+				        if(i != newArray.length-1){
+				            str += newArray[i] + ", ";
+						}
+
+						else{
+				            str += newArray[i];
+						}
+					}
+				}
+
+                return str;
 			};
 
 			functionInsert('hello', 'world');
