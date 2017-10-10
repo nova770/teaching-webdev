@@ -25,11 +25,15 @@
 				// objectHandle might not contain strKey
 				// should this be the case, return an empty string
 
-				if(objectHandle.hasOwnProperty(strKey) === '')
-					return '';
+				/*if(objectHandle.hasOwnProperty(strKey) === '')
+					return '';*/
 
-				else if(objectHandle.hasOwnProperty(strKey)){
+				if(objectHandle.hasOwnProperty(strKey)){
 				    return objectHandle[strKey];
+				}
+
+				else{
+				    return '';
 				}
 			};
 
