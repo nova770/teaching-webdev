@@ -34,14 +34,16 @@
 
 			// remove 'third' as a class from jQuery('#third') and apply the style of this class directly to the element instead
 			jQuery('#third')
+				.css({"position":"fixed",
+            		  "top":"10px",
+            		  "right":"10px"})
 				.removeClass('third').css("font-style");
 
 			var functionFixed = function(strSelector) {
 				// return whether jQuery(strSelector) has a fixed position
-				if(jQuery(strSelector).css("position", "fixed"))
-					return true;
+				return $(strSelector).css("position") === "fixed";
 
-				return false;
+				//return false;
 			};
 
 			console.log(functionFixed('#first')); // expected: false
@@ -49,10 +51,9 @@
 
 			var functionClass = function(strSelector, strClass) {
 				// return whether jQuery(strSelector) has strClass (the name of a css class) attached to it
-				if(jQuery(strSelector).hasClass("strClass"))
-				    return true;
+				return $(strSelector).hasClass(strClass) === true;
 
-				return false;
+				//return false;
 			};
 
 			console.log(functionClass('#first', 'first')); // expected: true
