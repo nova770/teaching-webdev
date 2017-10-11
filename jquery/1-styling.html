@@ -34,7 +34,7 @@
 
 			// remove 'third' as a class from jQuery('#third') and apply the style of this class directly to the element instead
 			jQuery('#third')
-				.removeClass('third');
+				.removeClass('third').css("font-weight");
 
 			var functionFixed = function(strSelector) {
 				// return whether jQuery(strSelector) has a fixed position
