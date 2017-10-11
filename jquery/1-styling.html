@@ -30,11 +30,11 @@
 			jQuery('#first')
 				.addClass('first').css("background-color", "#CCCCCC");
 			// make the text in jQuery('#second') bold as well as italic
-			jQuery('#second').css("font-weight", "Bold").css("font-weight", "Italic");
+			jQuery('#second').css("font-weight", "Bold").css("font-style", "Italic");
 
 			// remove 'third' as a class from jQuery('#third') and apply the style of this class directly to the element instead
 			jQuery('#third')
-				.removeClass('third').css("font-weight");
+				.removeClass('third').css("font-style");
 
 			var functionFixed = function(strSelector) {
 				// return whether jQuery(strSelector) has a fixed position
