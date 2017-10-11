@@ -38,7 +38,7 @@
 
 			var functionFixed = function(strSelector) {
 				// return whether jQuery(strSelector) has a fixed position
-				if(jQuery(strSelector).css("position", "fixed"))
+				if(jQuery('strSelector').css("position", "fixed"))
 					return true;
 
 				return false;
@@ -49,7 +49,7 @@
 
 			var functionClass = function(strSelector, strClass) {
 				// return whether jQuery(strSelector) has strClass (the name of a css class) attached to it
-				if(jQuery(strSelector).css("strClass"))
+				if(jQuery('strSelector').hasClass("strClass"))
 				    return true;
 
 				return false;
