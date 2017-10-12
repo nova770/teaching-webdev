@@ -30,22 +30,12 @@
                             });
 
                         rows.append(columns);
-                        //tableData = (i) + (j/10);
-                        /*rows.append(($('<td>')).text(tableData));
-                        rows.append($('<td>').text('click me').data({'one':i, 'two':j})
-							.on("click", function () {
-								$(this).text($(this).data('one') + '.' + $(this).data('two'));
-                            }));*/
                     }
 
                     makeTable.append(rows);
                 }
 
-                /*$("#output").on("click", "tr", function () {
-                    $(this).text("1.1");
-                });*/
                 return makeTable;
-				//return jQuery('<table></table>');
 			};
 
 			jQuery('#output')
