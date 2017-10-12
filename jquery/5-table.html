@@ -17,11 +17,17 @@
 				// to do this, you will have create jquery elements that represent the tr / td elements and append them systematically to a jquery table element
 
 				var table = $('<table>').attr({'border': '1'});
-				var output = 1.1;
+				var result = 1.1;
 
-				for(i=1; i<intHeight+1; i+=1){
+				for(i=1; i<intHeight; i+=1){
 
+				    var rows = $('<tr>');
+					for(j=1; j<intWidth; j+=1){
 
+					    row.append(($('<td>')).text(result));
+					}
+
+					table.append(rows);
 				}
 
 				return table;
