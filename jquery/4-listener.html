@@ -29,7 +29,7 @@
 
 			    var var2 = $(this).offset();
 			    var topVar = var2.top;
-			    var leftVar = topVar.left;
+			    var leftVar = var2.left;
 			    var topFinal = (event.pageY - topVar);
 			    var leftFinal = (event.pageX - leftVar);
 			    $(this).text((leftFinal)+ " - " + (topFinal));
