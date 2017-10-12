@@ -17,19 +17,33 @@
 				// you have to attach a click listener to each cell / td element and i recommend to make use of the jquery data function
 
                 var makeTable = $('<table>').attr({'border': '1'});
-                var tableData = "click me";
+                //var tableData = 1.1;
 
                 for(i=1; i<intHeight+1; i+=1){
 
                     var rows = $('<tr>');
                     for(j=1; j<intWidth+1; j+=1){
 
-                        rows.append(($('<td>')).onclick(text(tableData)));
+                        var columns = $('<td></td>').text('click me').data({'one':i, 'two':j})
+							.on('click', function () {
+								$(this).text($(this).data('one') + '.' + $(this).data('two'));
+                            });
+
+                        rows.append(columns);
+                        //tableData = (i) + (j/10);
+                        /*rows.append(($('<td>')).text(tableData));
+                        rows.append($('<td>').text('click me').data({'one':i, 'two':j})
+							.on("click", function () {
+								$(this).text($(this).data('one') + '.' + $(this).data('two'));
+                            }));*/
                     }
 
                     makeTable.append(rows);
                 }
 
+                /*$("#output").on("click", "tr", function () {
+                    $(this).text("1.1");
+                });*/
                 return makeTable;
 				//return jQuery('<table></table>');
 			};
