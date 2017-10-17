@@ -24,12 +24,8 @@
 				var time = functionAlgorithm(dblRandom);
 				var startTime = new Date().getTime();
 
-				for(i=1; i<1e6; ++i){
-				    time += i;
-				}
-
-				var endTime = new Date().getTime();
-				console.log(endTime - startTime);
+				var endTime = new Date().getTime()-startTime;
+				return endTime;
 				//return finalTime;
 			};
 
