@@ -29,8 +29,8 @@
 				}
 
 				var endTime = new Date().getTime();
-				var finalTime = endTime - startTime;
-				return finalTime;
+				console.log(endTime - startTime);
+				//return finalTime;
 			};
 
 			console.log(functionMeasure(Math.random())); // expected: a number that represents the time in milliseconds it took to execute the function
