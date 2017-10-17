@@ -14,12 +14,12 @@
 
 				if(difference === 0){
 
-                    var str = moment(intEpoch).format('dddd [the] Do [of] MMMM [in] YYYY - ',difference,' [years ago]');
+                    var str = moment(intEpoch).format('dddd [the] Do [of] MMMM [in] YYYY - '+difference+' [years ago]');
 				}
 
 				else{
                     var addition = moment().add('2016', 'YYYY');
-                    var str = moment(intEpoch).format('dddd [the] Do [of] MMMM [in] YYYY - [in] ',addition,' [years]');
+                    var str = moment(intEpoch).format('dddd [the] Do [of] MMMM [in] YYYY - [in] '+addition+' [years]');
 				}
 
 				return str;
