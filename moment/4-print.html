@@ -10,7 +10,8 @@
 		<script type="text/javascript">
 			var functionPrint = function(intEpoch) {
 				// given intEpoch (an epoch time), return a string that represents the given date in the format expected by the given examples
-				var difference = moment().diff('2016', 'YYYY');
+				var difference = moment().sub('2016', 'YYYY');
+                var addition = moment().add('2016', 'YYYY');
 
 				if(difference === 0){
 
@@ -18,7 +19,7 @@
 				}
 
 				else{
-                    var addition = moment().add('2016', 'YYYY');
+
                     var str = moment(intEpoch).format('dddd [the] Do [of] MMMM [in] YYYY - [in] '+addition+' [years]');
 				}
 
