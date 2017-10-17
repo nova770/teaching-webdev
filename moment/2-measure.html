@@ -22,7 +22,7 @@
 			var functionMeasure = function(dblRandom) {
 				// call functionAlgorithm(dblRandom) in here, measure how long it takes to execute this function and return the measured time in milliseconds
 				var time = functionAlgorithm(dblRandom);
-				var startTime = new Date().getTime();
+				var startTime = new Date().getTime(time);
 
 				var endTime = new Date().getTime()-startTime;
 				return endTime;
