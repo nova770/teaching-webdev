@@ -60,7 +60,7 @@ var server = http.createServer(function(req, res){
         res.end();
     }
 
-    else if(req.url === 'check'){res.writeHead(200, {'Content-Type': 'text/plain'});
+    else if(req.url === '/check'){res.writeHead(200, {'Content-Type': 'text/plain'});
 
         if(req.headers.cookie){res.write('yes');}
 
