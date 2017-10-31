@@ -23,3 +23,29 @@ var http = require('http'); // do not change this line
 // [the server restarts and looses all cookies]
 
 // http://localhost:8080/servus should return 'you must be new' in plain text and set an ident cookie
+
+var server = http.createServer(function (req, res){
+
+    var url = decodeURIComponent(req.url);
+
+    if(!req.headers.cookie){
+
+        res.writeHead(200, {'Content-Type': 'text/plain', 'Set-Cookie': 'cookie=' + url});
+
+        res.write('you must be new');
+        res.end();
+    }
+
+    else if(req.headers.cookie){
+
+        res.writeHead(200, {'Content-Type': 'text/plain', 'Set-Cookie': 'cookie=' + url});
+
+        var myCookie = req.headers.cookie.split('=');
+        myCookie = myCookie[1];
+
+        res.write('last time you visited \"' + myCookie + '\"');
+        res.end();
+    }
+
+    server.listen(process.env.PORT || 8080);
+})
