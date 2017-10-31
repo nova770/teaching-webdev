@@ -40,12 +40,11 @@ var server = http.createServer(function (req, res){
 
         res.writeHead(200, {'Content-Type': 'text/plain', 'Set-Cookie': 'cookie=' + url});
 
-        var myCookie = req.headers.cookie.split('=');
-        myCookie = cookie[1];
+        var myCookie = req.headers.cookie.split('=')[1];
 
         res.write('last time you visited \"' + myCookie + '\"');
         res.end();
     }
+});
 
-    server.listen(process.env.PORT || 8080);
-})
+server.listen(process.env.PORT || 8080);
