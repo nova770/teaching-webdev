@@ -40,8 +40,7 @@ var server = http.createServer(function (req, res){
 
         res.writeHead(200, {'Content-Type': 'text/plain', 'Set-Cookie': 'cookie=' + url});
 
-        var myCookie = req.headers.cookie.split('=');
-        myCookie = myCookie[1];
+        var myCookie = req.headers.cookie.split('=')[1];
 
         res.write('last time you visited \"' + myCookie + '\"');
         res.end();
