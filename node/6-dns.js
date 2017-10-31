@@ -11,7 +11,7 @@ var dns = require('dns'); // do not change this line
 
 var server = http.createServer(function (req, res){
 
-    if(req.url.indexOf('/') == 0) {res.write(200, {'Content-Type': 'text/plain'});}
+    if(req.url.indexOf('/') === 0) {res.write(200, {'Content-Type': 'text/plain'});}
 
     dns.resolve4(decodeURI(req.url.substr(1)), function(err, address){
 
