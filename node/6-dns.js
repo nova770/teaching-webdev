@@ -9,26 +9,28 @@ var dns = require('dns'); // do not change this line
 
 // http://localhost:8080/error should return 'error' in plain text
 
-var server = http.createServer(function (req, res){
+var server = http.createServer(function (req, res) {
 
-    if(req.url.indexOf('/') === 0) {res.write(200, {'Content-Type': 'text/plain'});}
+    if(req.url.indexOf('/') === 0)
 
-    dns.resolve4(decodeURI(req.url.substr(1)), function(err, address){
+        res.writeHead(200, {'Content-Type': 'text/plain'});
 
-        if(err){res.end('error');}
 
-        else{
+    dns.resolve4(decodeURI(req.url.substr(1)), function (err, address) {
+        if(err) res.end('error');
 
-            var tempVar = '';
+        else
+        {
 
-            for(var i=0; i<address.length; i++){
-
+            var tempVar = "";
+            for(var i =0; i < address.length; i++) {
                 tempVar += address[i];
             }
 
             res.end(tempVar);
         }
     });
+
 });
 
 server.listen(process.env.PORT || 8080);
