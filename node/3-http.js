@@ -48,7 +48,7 @@ var server = http.createServer(function(req, res){
 
         res.writeHead(200, {'Set-Cookie': 'hello=world', 'Content-Type': 'text/plain'});
 
-        res.write('I gave you a cookie');
+        res.write('i gave you a cookie');
         res.end();
     }
 
