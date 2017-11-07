@@ -26,3 +26,28 @@ var session = require('express-session'); // do not change this line
 // [the server restarts and looses all cookies]
 
 // http://localhost:8080/servus should return 'you must be new' in plain text and implicitly set an ident cookie by using the session middleware
+
+var exp = express();
+exp.use(session({'secret': 'secret cookie', 'cookie': { 'maxAge': 86400}}));
+
+exp.get('/:parameter', function(req, res){
+
+    var sessionVar = req.session;
+    if(req.session.history === undefined){
+        res.status(200);
+
+        res.set({'Content-Type': 'text/plain',});
+        sessionVar.history = req.params.parameter;
+        res.send('you must be new');
+    }
+
+    else{
+        res.status(200);
+        res.set({'Content-Type': 'text/plain',});
+        var temp = sessionVar.history;
+        sessionVar.history +='\n  /' + req.params.parameter;
+        res.send('your history:\n  /'+ temp);
+    }
+});
+
+exp.listen(process.env.PORT || 8080);
