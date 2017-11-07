@@ -38,3 +38,41 @@ var parser = require('body-parser'); // do not change this line
 // [the server restarts and looses all messages]
 
 // http://localhost:8080/list should return '' in plain text
+
+var exp = express();
+var name = '';
+var message = '';
+var array = [];
+
+exp.use(parser.urlencoded({
+    'extended': false,
+    'limit': 1024
+}));
+
+exp.post('/new', function (req, res) {
+    res.status(200);
+
+    res.set({'Content-Type': 'text/plain'});
+
+    name = req.body.name;
+    message = req.body.message;
+    array.push(name + ': ' + message);
+
+    res.send('thank you for your message');
+});
+
+exp.get('/form', function (req, res) {
+    res.status(200);
+    res.set({'Content-Type': 'text/html'});
+    res.send('<!DOCTYPE html><html><body><form action="/new" method="post"><input type="text" name="name"><input type="text" name="message"><input type="submit" value="submit"></form></body></html>');
+});
+
+exp.get('/list', function (req, res) {
+    res.status(200);
+    res.set({'Content-Type': 'text/plain'});
+
+    if(name !== ""){res.end(array.join('\n'));}
+    else res.end();
+});
+
+exp.listen(process.env.PORT || 8080);
