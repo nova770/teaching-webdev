@@ -69,38 +69,7 @@
 			// when receiving a 'drag' event from the server, use the contaianed strIdent and the intLeft as well as intTop position to update the associated element
 			// for example, you might receive the following in the 'drag' event when the last div has been dragged to the left: { 'strIdent':'fourth', 'intLeft':20, 'intTop':120 }
 
-            var Socket = io.connect('http://localhost:8080/'); // do not change this line
 
-            var dragging = false;
-            var mouseX;
-            var mouseY;
-            var current;
-            Socket.on('drag',function(data){
-				var position = '#'+data.strIdent;
-				$(position).offset({left: data.intLeft, top: data.intTop})
-                });
-
-            jQuery(".draggable").mousedown(function(event){
-                dragging = true;
-                var off = $(this).offset();
-                mouseX = event.pageX - off.left;
-                mouseY = event.pageY - off.top;
-                current = this;
-            });
-
-            jQuery(document).mousemove(function(event){
-                if(on == false) return;
-                jQuery(current).offset({top: event.pageY - mouseY, left: event.pageX - mouseX});
-
-                console.log(current.id);
-
-                var one = event.pageY - mouseY;
-                var two = event.pageX - mouseX;
-
-                Socket.emit('drag',{id: current.id, top: one, left: two});
-            });
-
-            jQuery(document).mouseup(function(event){dragging = false;});
 		</script>
 	</body>
 </html>
