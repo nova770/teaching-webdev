@@ -69,28 +69,6 @@
 			// when receiving a 'drag' event from the server, use the contaianed strIdent and the intLeft as well as intTop position to update the associated element
 			// for example, you might receive the following in the 'drag' event when the last div has been dragged to the left: { 'strIdent':'fourth', 'intLeft':20, 'intTop':120 }
 
-            var isDragged = false;
-            var mouseX;
-            var mouseY;
-
-            $('.draggable')
-                .on('mousedown', function(event) {
-                    isDragged = true;
-                    var outputX = $(this).position().left;
-                    var outputY = $(this).position().top;
-                    mouseX = (event.pageX - outputX);
-                    mouseY = (event.pageY - outputY);
-                })
-
-                .on('mousemove', function(event) {
-                    if (isDragged) {
-                        $('.draggable').css({top: event.pageY - mouseY, left: event.pageX - mouseX, position:'absolute'})
-                    }
-                })
-
-                .on('mouseup', function() {
-                    isDragged = false;
-                })
 		</script>
 	</body>
 </html>
